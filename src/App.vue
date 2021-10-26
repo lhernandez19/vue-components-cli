@@ -6,6 +6,10 @@
     <p v-for="item in libraryBag" :key="item.libraryItem.title">{{item.libraryItem.title}}</p>
     <button @click="libraryBag.checkout()">Checkout</button>
   </div>
+
+
+
+
 </template>
 
 <script>
