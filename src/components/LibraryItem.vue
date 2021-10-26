@@ -8,7 +8,7 @@
       <button class="btn btn-secondary" v-else @click="item.checkIn()">Check In</button>
       <!-- <button class="btn btn-danger" @click="item.remove()">Remove</button> -->
       <button class="btn btn-danger" @click="removeFunction(item)">Remove</button>
-      <b-button variant="success" @click='addFunction(item)'>Add to Bag</b-button>
+      <b-button variant="success" @click='addToBag(item)'>Add to Bag</b-button>
     </div>
   </div>
 </template>
@@ -26,9 +26,9 @@ export default {
     Album,
   },
   props: {
-    item: Object,
+    item: Object, 
     removeFunction: Function,
-    addFunction: Function,
+    addToBag: Function,
   },
 
   computed: {

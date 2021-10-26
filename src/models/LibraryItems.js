@@ -1,4 +1,4 @@
-function LibraryItem(media, removeMethod, addMethod){
+function LibraryItem(media, removeMethod){
     // list of possible values (enum)
     const STATUSES = {CHECKED_IN: 'in', CHECKED_OUT: 'out'};
 
@@ -21,17 +21,7 @@ function LibraryItem(media, removeMethod, addMethod){
         return this.status === STATUSES.CHECKED_IN;
     }
 
-    // option 1
-    // media.remove = function(){
-    //     removeMethod(this); // this is the library item (book / movie)
-    // }
-
-    // option 2
-    //media.remove = removeMethod || (() => {})
     media.remove = removeMethod || function(){};
-
-    media.add = addMethod || function(){};
-
 
     return media;
 }

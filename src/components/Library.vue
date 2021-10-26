@@ -4,7 +4,7 @@
 			v-for="(item, i) in library"
 			:item="item"
 			:remove-function="item => library.removeItem(item)"
-			:add-function="item => library.addItem(item)"
+			:add-to-bag="addToBag"
 			:key="item.id"
 			:forlater="i"
 		></library-item>
@@ -23,6 +23,11 @@ export default {
 	components: {
 		LibraryItem,
 	},
+
+	props: {
+		addToBag: Function,
+	},
+
 	data() {
 		return {
 			library: new LibraryCollection()
