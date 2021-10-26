@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :class="item.isAvailable() ? 'border-success' : 'border-warning'">
+  <div class="card m-1" :class="item.isAvailable() ? 'border-success' : 'border-warning'">
     <div class="card-body">
       <component :is="typeOfItem" :item="item"></component>
     </div>

@@ -21,6 +21,7 @@ function LibraryItem(media, removeMethod){
         return this.status === STATUSES.CHECKED_IN;
     }
 
+
     media.remove = removeMethod || function(){};
 
     return media;

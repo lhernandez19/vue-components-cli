@@ -1,14 +1,19 @@
 <template>
   <div id="app">
-    <library :add-to-bag="(item) => libraryBag.addItem(item)"></library>
- 
-    <h1>Bag</h1>
-    <p v-for="item in libraryBag" :key="item.libraryItem.title">{{item.libraryItem.title}}</p>
-    <button @click="libraryBag.checkout()">Checkout</button>
-  </div>
 
-
-
+    <div class="container">
+      <div class="row" >
+        <div class="col-md-9">
+            <library :add-to-bag="(item) => libraryBag.addItem(item)"></library>     
+        </div>
+        <div class="col-md-3">
+            <h1>Bag</h1>
+            <p v-for="item in libraryBag" :key="item.libraryItem.title">{{item.libraryItem.title}}</p>
+            <button @click="libraryBag.checkout()">Checkout</button>     
+        </div>
+      </div>
+    </div>
+	</div>
 
 </template>
 

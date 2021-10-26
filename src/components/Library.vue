@@ -1,16 +1,17 @@
 <template>
-	<div class="card-columns">
+
+	<div class="container d-flex flex-wrap justify-content-start">
 		<library-item
-			v-for="(item, i) in library"
-			:item="item"
-			:remove-function="item => library.removeItem(item)"
-			:add-to-bag="addToBag"
-			:key="item.id"
-			:forlater="i"
+		v-for="(item, i) in library"
+		:item="item"
+		:remove-function="item => library.removeItem(item)"
+		:add-to-bag="addToBag"
+		:key="item.id"
+		:forlater="i"
 		></library-item>
 		<p >Checked Out: {{ library.checkedOutItems().length }}</p>
-
 	</div>
+
 </template>
 
 <script>
