@@ -1,6 +1,11 @@
 <template>
     <div>
         <h2>Bag2</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                
+            </li>
+        </ul>
         
     </div>
 </template>
@@ -17,13 +22,6 @@ export default {
         };
     },
 
-    mounted() {
-        
-    },
-
-    methods: {
-        
-    },
 };
 </script>
 

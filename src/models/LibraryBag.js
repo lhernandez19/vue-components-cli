@@ -1,6 +1,6 @@
 import LibraryBagItem from "./LibraryBagItem";
 
-export default function LibraryBag(){
+export default function LibraryBagModel(){
     let arr = [];
 
     arr.addItem = function(item){

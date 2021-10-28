@@ -7,9 +7,10 @@
             <library :add-to-bag="(item) => libraryBag.addItem(item)"></library>     
         </div>
         <div class="col-md-3">
-            <h1>Bag</h1>
+            <!-- <h1>Bag</h1>
             <p v-for="item in libraryBag" :key="item.libraryItem.title">{{item.libraryItem.title}}</p>
-            <button @click="libraryBag.checkout()">Checkout</button>     
+            <button @click="libraryBag.checkout()">Checkout</button>  -->
+            <library-bag :library-bag-items="libraryBag"></library-bag>      
         </div>
       </div>
     </div>
@@ -19,17 +20,19 @@
 
 <script>
 import Library from "@/components/Library";
-import LibraryBag from "@/models/LibraryBag";
+import LibraryBagModel from "@/models/LibraryBag";
+import LibraryBag from './components/LibraryBag.vue';
 
 export default {
   name: 'App',
   components: {
-    Library
+    Library,
+    LibraryBag,
   },
 
 data(){
   return {
-    libraryBag: new LibraryBag(),
+    libraryBag: new LibraryBagModel(),
   }
 }
 
