@@ -4,7 +4,7 @@
 			<a class="navbar-brand"
 				><i class="fas fa-shopping-bag mx-2"></i> CHECK IT OUT!</a
 			>
-			<form class="form-inline">
+			<form class="form-inline" >
 				<input
 					class="form-control mr-sm-2"
 					type="search"
@@ -12,7 +12,7 @@
 					aria-label="Search"
 					v-model="search"
 				/>
-				<button class="btn btn-success my-2 my-sm-0" type="submit">
+				<button class="btn btn-success my-2 my-sm-0" type="submit" @click.prevent="submitSearch">
 					Search
 				</button>
 			</form>
@@ -55,18 +55,13 @@ export default {
 			info: null,
 			loading: true,
 			errored: false,
-			search: 'Batman',
+			search: '...',
 		}
 	},
 
 
 	methods: {
-		// submitSearch() {
-		// 	return this.search
-		// },
-	},
-
-	mounted() {
+		submitSearch() {
 		axios
 			.get('https://itunes.apple.com/search?', {
 				params: {
@@ -83,7 +78,27 @@ export default {
 				this.errored = true
 			})
 			.finally(() => (this.loading = false))
+		},
 	},
+
+	// mounted() {
+	// 	axios
+	// 		.get('https://itunes.apple.com/search?', {
+	// 			params: {
+	// 				term: this.search,
+	// 				entity: 'movie',
+	// 				limit: 10,
+	// 			},
+	// 		})
+	// 		.then(response => {
+	// 			this.info = response.data.results
+	// 		})
+	// 		.catch(error => {
+	// 			console.log(error)
+	// 			this.errored = true
+	// 		})
+	// 		.finally(() => (this.loading = false))
+	// },
 }
 </script>
 
