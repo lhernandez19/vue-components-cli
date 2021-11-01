@@ -1,15 +1,12 @@
 <template>
   <div id="app">
-
+    <nav-bar></nav-bar>
     <div class="container">
       <div class="row" >
         <div class="col-md-9">
             <library :add-to-bag="(item) => libraryBag.addItem(item)"></library>     
         </div>
         <div class="col-md-3">
-            <!-- <h1>Bag</h1>
-            <p v-for="item in libraryBag" :key="item.libraryItem.title">{{item.libraryItem.title}}</p>
-            <button @click="libraryBag.checkout()">Checkout</button>  -->
             <library-bag :library-bag-items="libraryBag"></library-bag>      
         </div>
       </div>
@@ -22,12 +19,14 @@
 import Library from "@/components/Library";
 import LibraryBagModel from "@/models/LibraryBag";
 import LibraryBag from './components/LibraryBag.vue';
+import NavBar from './components/NavBar';
 
 export default {
   name: 'App',
   components: {
     Library,
     LibraryBag,
+    NavBar,
   },
 
 data(){
@@ -42,12 +41,12 @@ data(){
 </script>
 
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
+} */
 </style>

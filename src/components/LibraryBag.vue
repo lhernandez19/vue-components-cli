@@ -22,11 +22,6 @@ export default {
 		libraryBagItems: Array,
 	},
 
-	// data(){
-	// return {
-	// 	libraryBag: new LibraryBag(),
-	// 	}
-	// }
 }
 </script>
 
